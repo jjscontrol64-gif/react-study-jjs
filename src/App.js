@@ -1,4 +1,22 @@
 import { useState } from 'react';
+import Navigation from './components/Navigation';
+import HomePage from './components/pages/HomePage';
+//import UseStatePage from './components/pages/UseStatePage';
+
+export default function App() {
+    const [page, setPage] = useState("home");
+
+    return (
+        <>
+            <Navigation currentPage={page} onNavigate={setPage} />
+            {page === "home" && <HomePage />}
+            {/* {page === "useState" && <UseStatePage />} */}
+        </>
+    )
+}
+
+/**
+import { useState } from 'react';
 import { Game } from './Game';
 import { UseState } from './UseState';
 import { UseEffect } from './UseEffect';
@@ -42,3 +60,4 @@ export default function App() {
         </>
     );
 }
+ */
